@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shweta Tadewad - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            padding: 40px 0;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.025em;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        .contact-item {
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            width: 14px;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .summary p {
+            font-size: 14px;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .skill-category {
+            font-size: 14px;
+        }
+
+        .skill-category strong {
+            font-weight: 600;
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .experience-item,
+        .project-item {
+            margin-bottom: 15px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .item-company {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .item-date {
+            color: var(--text-light);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            font-size: 13.5px;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 15px;
+            color: var(--text-main);
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .project-link {
+            font-size: 12px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-left: 10px;
+            font-weight: 500;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .cert-item {
+            font-size: 13.5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: inherit;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            background: #4f46e5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button class="print-btn no-print" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> Save as PDF
+    </button> -->
+
+    <div class="resume-container">
+        <header>
+            <div class="header-top">
+                <div>
+                    <h1>Shweta Tadewad</h1>
+                    <div class="subtitle">Full Stack Web Developer (Django & MERN)</div>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra, India</div>
+                <div class="contact-item"><i class="fas fa-phone"></i> +91 9175581098</div>
+                <a href="mailto:tadewadshweta249@gmail.com" class="contact-item"><i class="fas fa-envelope"></i>
+                    tadewadshweta249@gmail.com</a>
+                <a href="https://linkedin.com/in/shweta-tadewad-6b4707291" class="contact-item"><i
+                        class="fab fa-linkedin"></i> linkedin.com/in/shweta-tadewad</a>
+                <a href="https://github.com/shwetatadewad" class="contact-item"><i class="fab fa-github"></i>
+                    github.com/shwetatadewad</a>
+            </div>
+        </header>
+
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>Motivated Full Stack Web Developer with a strong foundation in Django and currently mastering the MERN
+                stack. Experienced in building scalable web applications, real-time booking systems, and AI-driven
+                tools. Proven track record in professional internships, delivering high-quality UI/UX designs and
+                backend solutions. Academic achiever with a 9.22 CGPA, seeking to contribute to innovative development
+                teams.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category"><strong>Languages:</strong> Python, Java, JavaScript, PHP, C/C++</div>
+                <div class="skill-category"><strong>Frameworks:</strong> Django, Node.js, Express, React.js</div>
+                <div class="skill-category"><strong>Frontend:</strong> HTML5, CSS3, Responsive Design</div>
+                <div class="skill-category"><strong>Databases:</strong> MySQL, MongoDB</div>
+                <div class="skill-category"><strong>Tools:</strong> Git, GitHub, REST APIs, MVC</div>
+                <div class="skill-category"><strong>Design:</strong> UI/UX Principles, AI/ML Inclusion</div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Web Developer Intern</span>
+                    <span class="item-date">Jan 2026 – Present</span>
+                </div>
+                <div class="item-company">PreDrag System LLP</div>
+                <ul>
+                    <li>Collaborating on frontend and backend development for live production projects.</li>
+                    <li>Implementing professional development workflows using version control (Git).</li>
+                    <li>Assisting in the architectural design and feature deployment of client-facing applications.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Web Development Intern</span>
+                    <span class="item-date">Jul 2025 – Sep 2025</span>
+                </div>
+                <div class="item-company">Zidio Development</div>
+                <ul>
+                    <li>Developed MERN-stack learning projects, including an Excel analytics application.</li>
+                    <li>Enhanced full-stack architecture understanding and optimized debugging techniques.</li>
+                    <li>Integrated MongoDB for efficient data storage and retrieval in real-time applications.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">UI Design Intern</span>
+                    <span class="item-date">Feb 2025 – Mar 2025</span>
+                </div>
+                <div class="item-company">Syntelligence Tech</div>
+                <ul>
+                    <li>Designed responsive and user-centric UI screens for the GrowLearn project.</li>
+                    <li>Applied advanced UI/UX principles to improve user engagement and accessibility.</li>
+                    <li>Collaborated with the design team to ensure visual consistency across platforms.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">Segravision (Waste Management System)</span>
+                    <span class="item-date"><a href="https://segravision.gt.tc" class="project-link"
+                            target="_blank">segravision.gt.tc</a></span>
+                </div>
+                <ul>
+                    <li>Smart waste management and tracking system built with PHP, MySQL, and JavaScript.</li>
+                    <li>Features efficient collection tracking, smart scheduling, and real-time monitoring.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">Smart Restaurant Booking System</span>
+                </div>
+                <ul>
+                    <li>Full-stack system using Django/Python for managing real-time table availability.</li>
+                    <li>Integrated booking validation, admin dashboards, and AI assistant for insights.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">AI Resume Gap Analyzer</span>
+                </div>
+                <ul>
+                    <li>AI-driven web application to evaluate resumes against job roles using Python/Django.</li>
+                    <li>Algorithms for skill-gap analysis and personalized learning recommendations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Bachelor of Computer Applications (BCA)</span>
+                    <span class="item-date">9.22 CGPA</span>
+                </div>
+                <div class="item-company">[Enter College/University Name]</div>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item"><span>Java Mastery (Udemy)</span></div>
+                <div class="cert-item"><span>Python Fundamentals (Infosys)</span></div>
+                <div class="cert-item"><span>PHP Web Development (Data Flair)</span></div>
+                <div class="cert-item"><span>State-Level Chess Player</span></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Instructions for user -->
+    <div style="text-align: center; margin-top: 20px; color: #64748b; font-size: 14px;" class="no-print">
+        <p>Tip: Click the button above, select "Save as PDF" as the destination, and ensure "Background graphics" is
+            checked.</p>
+    </div>
+</body>
+
+</html>
